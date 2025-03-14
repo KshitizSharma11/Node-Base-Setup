@@ -26,3 +26,9 @@ middleware and controllers to it.
 "services' → contains the buiness logic and interacts with repositories for data from the database.
 
 'utils' → contains helper methods, error classes etc.
+
+run mysql using Docker using follwoing command
+```
+docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:latest
+```
+choose your own password and take care to use sequelize-cli to run database migrations 

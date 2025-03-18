@@ -10,5 +10,20 @@ const createAirplane=async(data)=>{
     }
 
 }
-
-module.exports={createAirplane}
+const getAllAirplanes=async()=>{
+    try {
+        const planes=await airplane.getAll();
+        return planes;
+    } catch (error) {
+        console.log(error);
+    }
+}
+const getAirplane=async(id)=>{
+    try {
+        const plane=await airplane.get(id);
+        return plane;
+    } catch (error) {
+        console.log(error);
+    }
+}
+module.exports={createAirplane,getAllAirplanes, getAirplane}

@@ -27,10 +27,7 @@ async destroy(id)
 async get(id)
 {
     
-        
-        const response= await this.model.findByPk({
-            where:{id:id}
-        });
+        const response= await this.model.findByPk(id);
         return response;
    
 }

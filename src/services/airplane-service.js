@@ -26,4 +26,13 @@ const getAirplane=async(id)=>{
         console.log(error);
     }
 }
-module.exports={createAirplane,getAllAirplanes, getAirplane}
+const deleteAirplane=async(id)=>{
+    try{
+        const plane=await airplane.destroy(id);
+        return plane;
+    }
+    catch(error) {
+        console.log(error);
+    }
+}
+module.exports={createAirplane,getAllAirplanes, getAirplane,deleteAirplane}

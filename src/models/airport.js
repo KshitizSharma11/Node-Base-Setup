@@ -14,7 +14,17 @@ module.exports = (sequelize, DataTypes) => {
       this.belongsTo(models.City,{
         foreignKey: 'cityId',
         onDelete: 'CASCADE',
-        onUpdate: 'CASCADE'
+        
+      });
+      this.hasMany(models.Flights,{
+        foreignKey: 'arrival',
+        as: 'arrivalFlights',
+        onDelete: 'CASCADE',
+      });
+      this.hasMany(models.Flights,{
+        foreignKey: 'departure',
+        as: 'departureFlights',
+        onDelete: 'CASCADE',
       });
     }
   }
@@ -34,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       
     },
-    cityId:{type:DataTypes.Integer,
+    cityId:{type:DataTypes.INTEGER,
       allowNull: false,
     }
   }, {
